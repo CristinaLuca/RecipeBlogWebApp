@@ -1,0 +1,25 @@
+<html>
+    {% load static %}
+    <head>
+        <title> My tag template</title>
+        <link rel = "stylesheet" type = "text/css" href = "{%static 'organiser/css/myCSS.css' %}">
+    </head>
+    <body>
+        {% if tagNameList %}
+            <h2>
+                The tag list is: {{tagNames_String}} {#the list of tag names is diplayed as a header#}
+            </h2>
+            <h3>
+                Tags:
+            </h3>
+            <ul>
+                {#each tag is displayed on a new line#}
+                {% for tag in tagNameList %}
+                    <li>{{tag.tagName}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2> No tags! </h2>
+        {% endif %}
+    </body>
+</html>

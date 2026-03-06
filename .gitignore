@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+RecipeBlog_env/
+
+# Django
+db.sqlite3
+
+# VS Code
+.vscode/
+
+# Mac / Windows
+.DS_Store

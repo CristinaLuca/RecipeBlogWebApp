@@ -1,0 +1,24 @@
+{% extends "base_template.html" %}
+
+{% block title %}
+    Template in organiser. Inherits the project's base_template.html
+{% endblock %}
+
+{% block content %}
+    <p> Hello {{name}}</p>
+    {{block.super}} {# prints the <h2> tag #}
+    
+    {% if tagNames %}
+        <h3>
+            Tags:
+        </h3>
+        <ul> {#each tag is displayed on a new line#}
+            {% for tag in tagNames %}
+                <li>{{tag.tagName | upper | default:"No tag"}}</li> <!--use filters -->
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2> No tags! </h2>
+    {% endif %}
+
+{% endblock %}

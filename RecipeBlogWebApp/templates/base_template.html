@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            {% block title %}
+                Base Template
+            {% endblock %}
+        </title>
+    </head>
+
+    <body>
+        {% block content %}
+        <h2>
+            The tag list is: {{tagNames_String}} {#the list of tag names is diplayed as a header#}
+        </h2>
+        {% endblock %}
+    </body>
+</html>

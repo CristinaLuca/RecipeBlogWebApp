@@ -1,0 +1,23 @@
+
+<html>
+    <head>
+        <title> My tag template</title>
+    </head>
+    <body>
+        {% if tagNames %}
+            <h2>
+                The tag list is: {{tagNames_String}} {#the list of tag names is diplayed as a header#}
+            </h2>
+            <h3>
+                Tags:
+            </h3>
+            <ul> {#each tag is displayed on a new line#}
+                {% for tag in tagNames %}
+                    <li>{{tag.tagName | upper | default:"No tag"}}</li> <!--use filters -->
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h2> No tags! </h2>
+        {% endif %}
+    </body>
+</html>
