@@ -4,7 +4,7 @@ from django.db import models
 class Tag (models.Model):
      #define the model fields. They are all Python classes
     tagName = models.CharField(max_length=30)
-    tagSlug = models.SlugField(
+    slug = models.SlugField(
         max_length=30,
         unique=True
     )
@@ -21,7 +21,7 @@ class Recipe (models.Model):
     description = models.TextField()
     ingredients = models.TextField()
     method = models.TextField()
-    recipeSlug = models.SlugField(
+    slug = models.SlugField(
          max_length=30,
         unique=True
     )

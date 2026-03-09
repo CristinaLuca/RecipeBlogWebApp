@@ -6,6 +6,8 @@ from organiser.models import Tag
 
 import re
 
+from django.views.generic import View
+
 # homepage_Inheritance
 # works with tag_details_v4.html
 def homepage_Inheritance(request):
@@ -26,17 +28,18 @@ def homepage_Inheritance(request):
     return HttpResponse(template.render(context, request))
 
 # homepage_v4
-def homepage_v4(request):
-    template = loader.get_template("organiser/Tag_details_v4.html")
+class Homepage_v4(View):
+    def get(self, request):
+        template = loader.get_template("organiser/Tag_details_v4.html")
 
-    # create a list of tag names and add them to a string
-    tag_list = Tag.objects.all()
-    output = ", ".join([tag.tagName for tag in tag_list])
-    context = {
-        'tagNames_String' : output,
-        'tagNames' : tag_list,
-    }
-    return HttpResponse(template.render(context, request))
+        # create a list of tag names and add them to a string
+        tag_list = Tag.objects.all()
+        output = ", ".join([tag.tagName for tag in tag_list])
+        context = {
+            'tagNames_String' : output,
+            'tagNames' : tag_list,
+        }
+        return HttpResponse(template.render(context, request))
 
 
 # homepage_v2

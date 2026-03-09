@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> 
+        Blog Details Template        
+    </title>
+</head>
+<body>
+    <h2> The blog {{blog.postTitle}}</h2>
+    <!-- <h3>request: {{date}}</h3> -->
+    <p>postText: {{blog.postText}}</p>
+    <ul>
+        {% for tag in tags %}
+        <li>tag name: {{ tag.tagName}} </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

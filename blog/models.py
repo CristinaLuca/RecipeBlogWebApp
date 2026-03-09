@@ -10,7 +10,7 @@ class BlogPost (models.Model):
         auto_now_add = True, #the filed is automatically set to the current date the first time it is submitted
         unique_for_month = 'publication_Date' #ensure that the blog post for each month is unique
     )
-    postSlug = models.SlugField(
+    slug = models.SlugField(
         max_length=30,
         unique=True
     )

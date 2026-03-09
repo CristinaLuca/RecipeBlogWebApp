@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> 
+        Blog Template        
+    </title>
+</head>
+<body>
+    <h2> The list of blogs goes here</h2>
+    <ul>
+        {% for blog in blog_list %}
+            <li>{{ blog.postTitle}} *** {{blog.slug}} *** {{blog.postText}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
