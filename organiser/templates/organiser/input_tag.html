@@ -1,0 +1,55 @@
+
+<html>
+<head>
+    <title> My input tag form template</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <p>
+            <label for=id_tagName> tag name</label>
+            <input id="id_tagName" maxlength="30" name="tagName" type=" text" />
+        </p>
+        <!-- dispaly the list of errors for the tagName field -->
+        {% if form.tagName.errors %}
+        <ul class="custom_error_list">
+            {% for error in form.tagName.errors %}
+            <li><em> {{error}} </em></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <p>
+            <label for=id_slug> slug name</label>
+            <input id="id_slug" maxlength="30" name="slug" type=" text" />
+        </p>
+        <!-- dispaly the list of errors for the tagName field -->
+        {% if form.slug.errors %}
+        <ul class="custom_error_list">
+            {% for error in form.slug.errors %}
+            <li><em> {{error}} </em></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<!-- A very simple template using the form.as_p
+
+<html>
+<head>
+    <title> My input tag form template</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+-->
